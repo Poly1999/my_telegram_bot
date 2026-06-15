@@ -3,6 +3,9 @@ require('dotenv').config();
 const { Telegraf } = require('telegraf');
 const connectDB = require('./db');
 
+const http = require('http');
+http.createServer((req, res) => res.end('ok')).listen(process.env.PORT || 3000);
+
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
 require('./handlers/start')(bot);
