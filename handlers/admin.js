@@ -17,7 +17,7 @@ module.exports = bot => {
       Markup.keyboard([
         ['Нові', 'Підтверджені', 'В процесі'],
         ['Виконані', 'Скасовані'],
-        ['⚙️ Коригування дат'],
+        ['Коригування дат'],
       ]).resize(),
     );
   }
@@ -225,7 +225,7 @@ module.exports = bot => {
     renderAdminOrderPage(ctx, 'cancelled', 0, false);
   });
 
-  bot.hears('⚙️ Коригування дат', async ctx => {
+  bot.hears('Коригування дат', async ctx => {
     if (ctx.from.id !== adminId) return;
     if (isWaitingNote()) return;
     const keyboard = await showAdminDatePicker(ctx, new Date());
